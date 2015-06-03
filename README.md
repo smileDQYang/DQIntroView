@@ -3,8 +3,9 @@
 #import "IntroViewController.h"
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
-
+    
     self.window.backgroundColor = [UIColor grayColor];
     
     [_window makeKeyAndVisible];
@@ -16,15 +17,16 @@
     __weak AppDelegate *weakSelf = self;
     
     self.introView.didSelectedEnter = ^() {
-    
+        
         [weakSelf.introView.view removeFromSuperview];
         
         weakSelf.introView = nil;
-
-    // 进入主控制器
-    //  ViewController *mainVC = [[ViewController alloc] init];
-    //  weakSelf.window.rootViewController = mainVC;
+        
+        // 进入主控制器
+        //  ViewController *mainVC = [[ViewController alloc] init];
+        //  weakSelf.window.rootViewController = mainVC;
     };
+
     return YES;
 }
 
